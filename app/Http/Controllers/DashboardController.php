@@ -3,38 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $data['judul'] = 'Laman Home';
+        $data['isi'] = 'Lorem ipsum dolor sit amet';
+
+        return view('home', $data);
     }
 
-    public function product()
+    public function gallery()
     {
-        return view('product');
+        $data['judul'] = 'Laman Gallery';
+
+        return view('gallery', $data);
     }
 
     public function about()
     {
-        return view('about');
-    }
+        $data['judul'] = 'Laman About';
+        $data['isi'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 
-    public function detail($harga)
-    {
-        // Menentukan nama produk berdasarkan harga yang dikirim melalui URL parameter
-        $namaProduk = '';
-        if ($harga == 300000) {
-            $namaProduk = 'Sepatu';
-        } elseif ($harga == 200000) {
-            $namaProduk = 'Baju';
-        } elseif ($harga == 150000) {
-            $namaProduk = 'Celana';
-        } else {
-            $namaProduk = 'Produk Tidak Ditemukan';
-        }
-
-        return view('detail', compact('namaProduk', 'harga'));
+        return view('about', $data);
     }
 }
