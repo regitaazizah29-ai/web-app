@@ -45,3 +45,9 @@ Route::get('/kalkulator/segitiga', [KalkulatorController::class, 'segitiga']);
 Route::get('/daftar/mahasiswa', [MahasiswaController::class, 'index']);
 
 Route::get('/employe', [EmployeController::class, 'index']);
+Route::get('/employe/tambah', [EmployeController::class, 'create']);
+Route::post('/employe/store', [EmployeController::class, 'store']);
+Route::get('/employe/edit/{id}', [EmployeController::class, 'edit']);
+Route::put('/employe/update/{id}', [EmployeController::class, 'update']);
+
+Route::delete('/employe/delete/{id}', [EmployeController::class, 'destroy']);

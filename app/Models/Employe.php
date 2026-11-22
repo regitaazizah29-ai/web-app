@@ -8,4 +8,13 @@ class Employe extends Model
 {
     protected $table = 'employes';
     protected $primaryKey = 'id';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'id',
+        'nama',
+        'alamat',
+        'gender',
+        'gaji',
+    ];
 }
