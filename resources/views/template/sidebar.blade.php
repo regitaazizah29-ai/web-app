@@ -5,3 +5,5 @@
         <li><a href="/about">About</a></li>
     </ul>
 </div>
+
+<li><a href="/logout">Logout</a></li>
